@@ -1,1 +1,38 @@
-
+.clavier{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+}
+.calculatrice{
+    background-color: grey;
+    border: black 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    padding: 20px;
+    margin: 5px;
+    width: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.top button{
+    width: 44%;
+}
+.afficher{
+    height: 100px;
+    background-color: white;
+    border: solid 1px black;
+}
