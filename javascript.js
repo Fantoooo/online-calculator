@@ -26,7 +26,9 @@ function operate(number1, number2, operateur){
         return multiplication(number1, number2)
     }
     if (operateur=="/"){
-        return diviser(number1, number2)
+        if (number1 == number2 == 0){return "Are you serious ?"
+    }else{
+        return diviser(number1, number2)}
     }
 }
 /*change the content of the containershow */
@@ -194,4 +196,20 @@ egal.addEventListener('click', ()=>{
         nb1 = ""
         operateur = ""
     }
+})
+
+/*delete and remove */
+const deleted = document.querySelector("#delete")
+const removed = document.querySelector("#remove")
+deleted.addEventListener('click', () =>{
+    nb1 = ""
+    operateur = ""
+    show = ""
+    changeshow("","","","")
+})
+removed.addEventListener('click', () =>{
+    show  = show.substring(0,show.length-1)
+    if (operateur == ""){
+        changeshow(show)
+    }else{changeshow(nb1, operateur, show)}
 })
