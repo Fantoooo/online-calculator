@@ -31,8 +31,9 @@ button{
 .top button{
     width: 44%;
 }
-.afficher{
+#afficher{
     height: 100px;
     background-color: white;
     border: solid 1px black;
+    width: 230px;
 }
