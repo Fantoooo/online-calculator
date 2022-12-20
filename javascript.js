@@ -34,7 +34,7 @@ const containershow = document.querySelector("#afficher")
 function changeshow(number1="", action="", number2="", resultat=""){
     if (resultat.length === 0){
         containershow.textContent = `${number1} ${action} ${number2}`
-    }else{containershow.textContent = `${resultat}`}
+    }else{containershow.textContent = `${resultat}${action}`}
 }
 /*get the entry of the button */
 /*zero the value */
@@ -137,6 +137,11 @@ plus.addEventListener('click', () =>{
         nb1 = show
         show = ""
         changeshow(nb1, operateur);
+    }else{
+        changeshow("","","+",operate(Number(nb1), Number(show), operateur))
+        nb1 = `${operate(Number(nb1), Number(show), operateur)}`
+        show = ""
+        operateur = "+"
     }
 })
 moin.addEventListener('click', () =>{
@@ -145,6 +150,11 @@ moin.addEventListener('click', () =>{
         nb1 = show
         show = ""
         changeshow(nb1, operateur);
+    }else {
+        changeshow("","","-",operate(Number(nb1), Number(show), operateur))
+        nb1 = `${operate(Number(nb1), Number(show), operateur)}`
+        show = ""
+        operateur = "-"
     }
 })
 divise.addEventListener('click', () =>{
@@ -153,6 +163,11 @@ divise.addEventListener('click', () =>{
         nb1 = show
         show = ""
         changeshow(nb1, operateur);
+    }else{
+        changeshow("","","/",operate(Number(nb1), Number(show), operateur))
+        nb1 = `${operate(Number(nb1), Number(show), operateur)}`
+        show = ""
+        operateur = "/"
     }
 })
 multiplie.addEventListener('click', () =>{
@@ -161,6 +176,11 @@ multiplie.addEventListener('click', () =>{
         nb1 = show
         show = ""
         changeshow(nb1, operateur);
+    }else{
+        changeshow("","","*",operate(Number(nb1), Number(show), operateur))
+        nb1 = `${operate(Number(nb1), Number(show), operateur)}`
+        show = ""
+        operateur = "*"
     }
 })
 egal.addEventListener('click', ()=>{
@@ -170,8 +190,8 @@ egal.addEventListener('click', ()=>{
         return
     }else if (!operateur=="" && !show==""){
         changeshow("","","",operate(Number(nb1), Number(show), operateur))
+        show = `${operate(Number(nb1), Number(show), operateur)}`
         nb1 = ""
-        show = ""
         operateur = ""
     }
 })
